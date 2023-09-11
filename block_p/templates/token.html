@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+    }
+    .container {
+      text-align: center;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+    }
+    .container h1 {
+      margin-bottom: 20px;
+    }
+    .container p {
+      margin-bottom: 10px;
+    }
+    .container code {
+      display: block;
+      padding: 10px;
+      background-color: #f9f9f9;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      font-family: Consolas, monospace;
+      word-break: break-all; /* Rompe las palabras largas para ajustar el contenido */
+    }
+    .container button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    .container button:hover {
+      background-color: #45a049;
+    }
+    .container .services {
+      background-color: #f9f9f9;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      padding: 10px;
+      text-align: left;
+      margin-bottom: 10px;
+      word-break: break-all;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <h1>Token de acceso</h1>
+
+  <p><code id="access-token">{{ access_token }}</code></p>
+
+  <button onclick="copyTokenToClipboard()">Copiar al Portapapeles</button>
+</div>
+
+<script>
+  function copyTokenToClipboard() {
+    const tokenElement = document.getElementById('access-token');
+    const token = tokenElement.innerText;
+
+    const tempElement = document.createElement('textarea');
+    tempElement.value = token;
+    document.body.appendChild(tempElement);
+    tempElement.select();
+    document.execCommand('copy');
+    document.body.removeChild(tempElement);
+    alert("token copiado al portapapeles");
+  }
+</script>
+
+</body>
+</html>
