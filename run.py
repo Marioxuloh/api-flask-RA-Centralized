@@ -1,4 +1,4 @@
-from block_p import create_app
+from api import create_app
 
 app = create_app()
 

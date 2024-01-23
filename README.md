@@ -1,4 +1,4 @@
-BLOCK-P:
+api-flask-RA-Centralized:
 
 Esto es una API diseñada para ayudar en la compartición de recursos en sistemas distribuidos con un servicio de bloqueo distribuido.
 
